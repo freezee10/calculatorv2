@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    .grid {
+        display: grid;
+        grid-template-columns: 30px 30px 30px 30px;
+        grid-row-gap: 20px;
+        grid-column-gap: 40px;
+        
+    }
+
+    body {
+        background-color: black;
+    }
+
+    .nums {
+        background-color: rgb(61, 61, 61);
+        border: none;
+        color: white;
+        width: 60px;
+       height: 60px;
+       font-size: 25px;
+     
+
+       border-radius: 100px;
+    }
+
+    .operator {
+        background-color: rgb(254, 160, 10);
+        border: none;
+        color: white;
+        width: 60px;
+       height: 60px;
+       font-size: 25px;
+       border-radius: 100px;
+    }
+
+    .math {
+        color: white;
+        font-size: 45px;
+        margin-left: 10px;
+        display: inline-block;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
+    .clear {
+        background-color: rgb(61, 61, 61);
+        border: none;
+        color: white;
+        width: 60px;
+       height: 60px;
+       font-size: 17.5px;
+     margin-top: 15px;
+
+       border-radius: 100px;
+    }
+
+    .title {
+        color: white;
+        font-size: 35px;
+        font-weight: bold;
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+
+    </style>
+</head>
+<body>
+    <h1 class = "title"> Apple Calculator </h1>
+    <p class = "math">  </p>
+    <div class = "grid">
+        <div>
+            <button class = "nums" onclick = "calculate('1')"> 1 </button>
+        </div>
+        
+        <div>
+            <button class = "nums" onclick =  "calculate('2')"> 2 </button>
+        </div>
+         <div>
+            <button class = "nums" onclick =  "calculate('3')"> 3 </button>
+         </div>
+      
+        <div>
+        <button class = "operator" onclick =  "calculate('+')"> + </button>
+            
+        </div>
+
+        <div>
+            <button class = "nums" onclick =  "calculate('4')"> 4</button>
+        </div>
+        
+        <div>
+            <button class = "nums" onclick =  "calculate('5')"> 5</button>
+        </div>
+         <div>
+            <button class = "nums" onclick =  "calculate('6')"> 6 </button>
+         </div>
+      
+        <div>
+            <button class = "operator" onclick =  "calculate('-')"> - </button>
+            
+        </div>
+
+        <div>
+            <button class = "nums" onclick =  "calculate('7')"> 7</button>
+        </div>
+        
+        <div>
+            <button class = "nums" onclick =  "calculate('8')"> 8</button>
+        </div>
+         <div>
+            <button class = "nums" onclick =  "calculate('9')"> 9 </button>
+         </div>
+      
+        <div>
+            <button class = "operator" onclick = "calculate('*')" > * </button>
+            
+        </div>
+
+        <div>
+            <button class = "nums" onclick =  "calculate('0')"> 0 </button>
+        </div>
+        
+        <div>
+            <button class = "nums" onclick =  "calculate('.')"> . </button>
+        </div>
+         <div>
+            <button class = "nums" onclick = "calculate('=')"> = </button>
+         </div>
+      
+        <div>
+            <button class = "operator" onclick = "calculate('/')" > / </button>
+            
+        </div>
+        
+    </div>
+   
+  
+   
+  
+  
+
+  
+  
+ 
+   
+ 
+  
+   <button class = "clear" onclick = "calculate('Clear')"> Clear </button>
+
+    <script>
+    const str = '2/0' ;
+
+    console.log(str.at(-1)); // y
+     let expression = "";
+     let display;
+        function calculate(button) {
+           
+            if(button === '1') {
+                expression = expression+' 1';
+                document.querySelector('.math').innerText = expression;
+            } else if(button === '2') {
+                expression = expression+' 2';
+                document.querySelector('.math').innerText = expression;
+            } else if(button === '3') {
+                expression = expression+' 3';
+                document.querySelector('.math').innerText = expression;
+                console.log(expression);
+            } else if(button === '+') {
+                expression = expression+' +';
+                document.querySelector('.math').innerText = expression;
+                console.log(expression);
+            } else if(button === '4') {
+                expression = expression+' 4';
+                document.querySelector('.math').innerText = expression;
+                console.log(expression);
+            } else if(button === '5') {
+                expression = expression+' 5';
+                document.querySelector('.math').innerText = expression;
+                console.log(expression);
+            }  else if(button === '6') {
+                expression = expression+' 6';
+                document.querySelector('.math').innerText = expression;
+                console.log(expression);
+            } else if(button === '-') {
+                
+                expression = expression+' -';
+                document.querySelector('.math').innerText = expression;
+                console.log(expression);
+            } else if(button === '=') {
+                expression = eval(expression);
+                document.querySelector('.math').innerText = expression;
+                console.log(eval(expression));
+                
+            } else if(button === 'Clear') {
+                expression = ""
+                document.querySelector('.math').innerText = expression;
+            } else if(button === '7') {
+                expression = expression+' 7';
+                document.querySelector('.math').innerText = expression;
+                console.log(expression);
+            } else if(button === '8') {
+                expression = expression+' 8';
+                document.querySelector('.math').innerText = expression;
+                console.log(expression);
+            } else if(button === '9') {
+                expression = expression+' 9';
+                document.querySelector('.math').innerText = expression;
+                console.log(expression);
+            } else if(button === '*') {
+                
+                expression = expression+' *';
+                document.querySelector('.math').innerText = expression;
+                console.log(expression);
+            }  else if(button === '/') {
+                
+                expression = expression+' /';
+                document.querySelector('.math').innerText = expression;
+                console.log(expression);
+            }  else if(button === '0') {
+                expression = expression+' 0';
+                document.querySelector('.math').innerText = expression;
+        } else if(button === '.') {
+                
+                expression = expression+' .';
+                document.querySelector('.math').innerText = expression;
+              
+            } 
+
+    }
+    </script>
+</body>
+</html>
